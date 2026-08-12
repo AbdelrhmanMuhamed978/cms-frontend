@@ -1,30 +1,76 @@
-<div class="admin-home">
-  <div class="admin-home__header">
-    <h1 class="admin-home__title">{{ 'ADMIN.HOME.TITLE' | translate }}</h1>
-    <p class="admin-home__subtitle">{{ 'ADMIN.HOME.SUBTITLE' | translate }}</p>
+<div style="padding: 24px;">
+  <div style="margin-bottom: 24px;">
+    <h1 style="margin-bottom: 4px; font-weight: bold;">Overview</h1>
+    <p style="color: #666;">Manage platform content and settings</p>
   </div>
 
   <div nz-row [nzGutter]="[16, 16]">
-    @for (section of visibleSections(); track section.route) {
-      <div nz-col [nzXs]="24" [nzSm]="12" [nzLg]="8" [nzXl]="6">
-        <a [routerLink]="section.route" class="admin-home__card-link">
-          <nz-card class="admin-home__card" [nzHoverable]="true">
-            <div class="admin-home__card-body">
-              <div class="admin-home__icon-wrap">
-                <ng-icon [name]="section.icon" class="admin-home__icon" aria-hidden="true" />
-              </div>
-              <h3 class="admin-home__card-title">{{ section.titleKey | translate }}</h3>
-              <p class="admin-home__card-desc">{{ section.descriptionKey | translate }}</p>
+    <!-- Recitations Card -->
+    <div nz-col [nzXs]="24" [nzSm]="12" [nzLg]="6">
+      <a routerLink="/admin/recitations" style="display: block; text-decoration: none;">
+        <nz-card [nzHoverable]="true">
+          <div style="display: flex; align-items: flex-start; gap: 16px;">
+            <div style="font-size: 24px; color: #1890ff;">
+              <span nz-icon nzType="audio"></span>
             </div>
-          </nz-card>
-        </a>
-      </div>
-    } @empty {
-      <div nz-col [nzSpan]="24">
-        <nz-card class="admin-home__empty">
-          <p class="admin-home__empty-text">{{ 'ADMIN.HOME.NO_SECTIONS' | translate }}</p>
+            <div>
+              <h3 style="margin-bottom: 4px; font-weight: bold; color: rgba(0, 0, 0, 0.85);">Recitations</h3>
+              <p style="margin: 0; color: rgba(0, 0, 0, 0.45);">Manage audio pipelines</p>
+            </div>
+          </div>
         </nz-card>
-      </div>
-    }
+      </a>
+    </div>
+
+    <!-- Assets Card -->
+    <div nz-col [nzXs]="24" [nzSm]="12" [nzLg]="6">
+      <a routerLink="/admin/publishers" style="display: block; text-decoration: none;">
+        <nz-card [nzHoverable]="true">
+          <div style="display: flex; align-items: flex-start; gap: 16px;">
+            <div style="font-size: 24px; color: #1890ff;">
+              <span nz-icon nzType="appstore"></span>
+            </div>
+            <div>
+              <h3 style="margin-bottom: 4px; font-weight: bold; color: rgba(0, 0, 0, 0.85);">Assets</h3>
+              <p style="margin: 0; color: rgba(0, 0, 0, 0.45);">Manage assets and publishers</p>
+            </div>
+          </div>
+        </nz-card>
+      </a>
+    </div>
+
+    <!-- Audio Card -->
+    <div nz-col [nzXs]="24" [nzSm]="12" [nzLg]="6">
+      <a routerLink="/admin/audio" style="display: block; text-decoration: none;">
+        <nz-card [nzHoverable]="true">
+          <div style="display: flex; align-items: flex-start; gap: 16px;">
+            <div style="font-size: 24px; color: #1890ff;">
+              <span nz-icon nzType="sound"></span>
+            </div>
+            <div>
+              <h3 style="margin-bottom: 4px; font-weight: bold; color: rgba(0, 0, 0, 0.85);">Audio</h3>
+              <p style="margin: 0; color: rgba(0, 0, 0, 0.45);">Manage audio slicing</p>
+            </div>
+          </div>
+        </nz-card>
+      </a>
+    </div>
+
+    <!-- Analytics Card -->
+    <div nz-col [nzXs]="24" [nzSm]="12" [nzLg]="6">
+      <a routerLink="/admin/usage" style="display: block; text-decoration: none;">
+        <nz-card [nzHoverable]="true">
+          <div style="display: flex; align-items: flex-start; gap: 16px;">
+            <div style="font-size: 24px; color: #1890ff;">
+              <span nz-icon nzType="bar-chart"></span>
+            </div>
+            <div>
+              <h3 style="margin-bottom: 4px; font-weight: bold; color: rgba(0, 0, 0, 0.85);">Analytics</h3>
+              <p style="margin: 0; color: rgba(0, 0, 0, 0.45);">Monitor platform analytics</p>
+            </div>
+          </div>
+        </nz-card>
+      </a>
+    </div>
   </div>
 </div>
